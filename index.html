@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Networking Layer Resources</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Networking Layer Resource Library</h1>
+      <div class="controls">
+        <input id="searchInput" type="search" placeholder="Search topics, tools, labs..." />
+        <button id="themeToggle" type="button" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <nav class="sidebar" aria-label="Sections">
+        <a href="#overview">Overview</a>
+        <a href="#layer1">Layer 1</a>
+        <a href="#layer2">Layer 2</a>
+        <a href="#layer3">Layer 3</a>
+        <a href="#layer4">Layer 4</a>
+        <a href="#layer5to7">Layers 5–7</a>
+        <a href="#security">Cross-Layer Security</a>
+        <a href="#capstone">Capstone</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#workflow">Workflow</a>
+      </nav>
+
+      <section class="content">
+        <article id="overview" class="panel searchable">
+          <h2>How to Use This Library</h2>
+          <ol>
+            <li>Learn the core concepts.</li>
+            <li>Use packet and tool evidence to validate understanding.</li>
+            <li>Complete at least one lab.</li>
+            <li>Write a short troubleshooting note with findings.</li>
+          </ol>
+        </article>
+
+        <article id="layer1" class="panel searchable">
+          <h2>Layer 1 — Physical</h2>
+          <h3>Learn</h3>
+          <ul>
+            <li>Signal basics: electrical, optical, radio.</li>
+            <li>Bandwidth vs throughput vs latency vs jitter.</li>
+            <li>Attenuation, interference, duplex/negotiation basics.</li>
+          </ul>
+          <h3>Tools</h3>
+          <ul>
+            <li><code>ping</code>, <code>ethtool</code>, <code>ip -s link</code></li>
+          </ul>
+          <h3>Lab Ideas</h3>
+          <ul>
+            <li>Compare gateway vs public host latency/loss.</li>
+            <li>Test duplex/speed changes in a simulator.</li>
+            <li>Compare wired vs Wi-Fi consistency.</li>
+          </ul>
+        </article>
+
+        <article id="layer2" class="panel searchable">
+          <h2>Layer 2 — Data Link</h2>
+          <h3>Learn</h3>
+          <ul>
+            <li>Frames, MAC addressing, ARP, VLANs, trunks.</li>
+            <li>Broadcast domains and loop prevention basics.</li>
+          </ul>
+          <h3>Tools</h3>
+          <ul>
+            <li>Wireshark filters: <code>arp</code>, <code>eth.addr</code>, <code>vlan</code></li>
+            <li><code>arp -a</code>, <code>ip neigh</code></li>
+          </ul>
+          <h3>Lab Ideas</h3>
+          <ul>
+            <li>Capture ARP request/reply behavior.</li>
+            <li>Build isolated VLANs and verify expected limits.</li>
+            <li>Diagnose a trunk mismatch in simulation.</li>
+          </ul>
+        </article>
+
+        <article id="layer3" class="panel searchable">
+          <h2>Layer 3 — Network</h2>
+          <h3>Learn</h3>
+          <ul>
+            <li>IPv4 subnetting/CIDR, routing, default gateway logic.</li>
+            <li>IPv6 basics, ICMP diagnostics, NAT behavior.</li>
+          </ul>
+          <h3>Tools</h3>
+          <ul>
+            <li><code>ip addr</code>, <code>ip route</code>, <code>traceroute/tracert</code></li>
+            <li>Wireshark filters: <code>ip</code>, <code>ipv6</code>, <code>icmp</code></li>
+          </ul>
+          <h3>Lab Ideas</h3>
+          <ul>
+            <li>Subnet a small office topology.</li>
+            <li>Break/fix default gateway and routes.</li>
+            <li>Compare path changes with traceroute.</li>
+          </ul>
+        </article>
+
+        <article id="layer4" class="panel searchable">
+          <h2>Layer 4 — Transport</h2>
+          <h3>Learn</h3>
+          <ul>
+            <li>TCP handshake/teardown and reliability behavior.</li>
+            <li>UDP tradeoffs and port/service mapping.</li>
+          </ul>
+          <h3>Tools</h3>
+          <ul>
+            <li><code>ss</code>, <code>netstat</code>, <code>nc</code>, <code>telnet</code></li>
+            <li>Wireshark filters: <code>tcp</code>, <code>udp</code></li>
+          </ul>
+          <h3>Lab Ideas</h3>
+          <ul>
+            <li>Compare TCP/UDP behavior under packet loss.</li>
+            <li>Validate open/filtered/closed ports.</li>
+            <li>Classify timeout vs reset scenarios.</li>
+          </ul>
+        </article>
+
+        <article id="layer5to7" class="panel searchable">
+          <h2>Layers 5–7 — Session, Presentation, Application</h2>
+          <h3>Learn</h3>
+          <ul>
+            <li>Session continuity and token handling.</li>
+            <li>Encoding, encryption, compression concerns.</li>
+            <li>DNS, HTTP/HTTPS, SMTP, SSH, DHCP fundamentals.</li>
+          </ul>
+          <h3>Tools</h3>
+          <ul>
+            <li><code>dig</code>, <code>nslookup</code>, <code>curl -v</code>, <code>openssl s_client</code></li>
+            <li>Browser dev tools and Wireshark <code>dns/http/tls</code> filters.</li>
+          </ul>
+          <h3>Lab Ideas</h3>
+          <ul>
+            <li>Trace DNS → TCP → TLS → HTTP flow.</li>
+            <li>Break DNS resolver settings and diagnose.</li>
+            <li>Test certificate-name/expiry failures in lab.</li>
+          </ul>
+        </article>
+
+        <article id="security" class="panel searchable">
+          <h2>Cross-Layer Security</h2>
+          <ul>
+            <li>Map threats and controls across L2, L3/4, and L7.</li>
+            <li>Use segmentation, least privilege, and logging.</li>
+            <li>Create a threat-to-control matrix with residual risk.</li>
+          </ul>
+        </article>
+
+        <article id="capstone" class="panel searchable">
+          <h2>Capstone Resource Kit</h2>
+          <ul>
+            <li>No internet on one host.</li>
+            <li>Ping works but web access fails.</li>
+            <li>High latency/jitter for voice/video.</li>
+            <li>Intermittent DNS/TLS failures.</li>
+          </ul>
+          <p>Deliverables: symptom summary, layered test sequence, evidence table, root cause, corrective and preventive actions.</p>
+        </article>
+
+        <article id="platforms" class="panel searchable">
+          <h2>Recommended Open Learning Platforms</h2>
+          <ul>
+            <li>Cisco Networking Academy</li>
+            <li>Juniper Open Learning</li>
+            <li>Wireshark docs + sample captures</li>
+            <li>PracticalNetworking.net</li>
+            <li>Cloudflare Learning Center</li>
+            <li>RFC Editor</li>
+          </ul>
+        </article>
+
+        <article id="workflow" class="panel searchable">
+          <h2>Weekly Study Workflow</h2>
+          <ol>
+            <li>Concept Pass</li>
+            <li>Packet Pass</li>
+            <li>Lab Pass</li>
+            <li>Reflection Pass</li>
+          </ol>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Source content: <code>PART_5_LAYER_RESOURCES.md</code></p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
