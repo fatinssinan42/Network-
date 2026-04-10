@@ -298,3 +298,11 @@ Learners complete the module when they can:
 - Prioritize “why” and “when” over memorization.
 - Repeat the layered troubleshooting workflow until it becomes automatic.
 - Maintain a personal troubleshooting journal with symptoms, tests, findings, and root causes.
+
+---
+
+## 9) Full Layer-by-Layer Resource Pack
+
+For an extensive resource library covering each OSI layer, cross-layer security, capstone resources, tools, labs, and evidence templates, use:
+
+- `PART_5_LAYER_RESOURCES.md`
